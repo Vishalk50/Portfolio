@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishal Khajuriya — AI Product Builder</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0f;
+            color: #e4e4ef;
+            line-height: 1.6;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 40px 20px; }
+
+        /* Header */
+        .header { text-align: center; padding: 40px 0; }
+        .header h1 { font-size: 2rem; font-weight: 700; }
+        .header .tagline {
+            color: #8888a0; font-size: 1rem; margin-top: 4px;
+        }
+        .header .sub {
+            color: #6c5ce7; font-size: 0.85rem; margin-top: 8px;
+            font-weight: 500;
+        }
+        .links { margin-top: 16px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .links a {
+            color: #e4e4ef; text-decoration: none; font-size: 0.85rem;
+            padding: 6px 16px; border: 1px solid #2a2a3a; border-radius: 20px;
+            transition: border-color 0.2s;
+        }
+        .links a:hover { border-color: #6c5ce7; }
+
+        /* Section */
+        .section { margin: 40px 0; }
+        .section h2 {
+            font-size: 1.1rem; font-weight: 600; margin-bottom: 16px;
+            color: #6c5ce7; text-transform: uppercase; letter-spacing: 1px;
+        }
+
+        /* Project card */
+        .project {
+            background: #12121a; border: 1px solid #1e1e2e; border-radius: 12px;
+            padding: 20px; margin-bottom: 16px;
+        }
+        .project h3 { font-size: 1.05rem; font-weight: 600; }
+        .project .status {
+            display: inline-block; font-size: 0.7rem; padding: 2px 10px;
+            border-radius: 12px; font-weight: 600; margin-left: 8px;
+        }
+        .status-done { background: #142014; color: #4caf50; border: 1px solid #2a6e2a; }
+        .status-wip  { background: #1a1a10; color: #eab308; border: 1px solid #5c4a00; }
+        .status-con  { background: #1a1020; color: #a855f7; border: 1px solid #4a1a6e; }
+        .project .desc { color: #a0a0b8; font-size: 0.88rem; margin-top: 8px; }
+        .project .tech { color: #6c5ce7; font-size: 0.78rem; margin-top: 8px; }
+        .project a { color: #6c5ce7; text-decoration: none; font-size: 0.82rem; display: inline-block; margin-top: 8px; }
+        .project a:hover { text-decoration: underline; }
+
+        /* Footer */
+        .footer { text-align: center; padding: 40px 0; color: #555; font-size: 0.8rem; }
+
+        @media (max-width: 500px) {
+            .header h1 { font-size: 1.5rem; }
+            .links { gap: 10px; }
+            .links a { font-size: 0.8rem; padding: 4px 12px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Vishal Khajuriya</h1>
+            <div class="tagline">AI Product Builder</div>
+            <div class="sub">I turn ideas into working software using AI agents</div>
+            <div class="links">
+                <a href="https://github.com/Vishalk50">GitHub</a>
+                <a href="https://www.linkedin.com/in/vishal-kkhajuriya-a182b91b5/">LinkedIn</a>
+                <a href="mailto:vishalkhajuriya443@gmail.com">Email</a>
+            </div>
+        </div>
+
+        <!-- About -->
+        <div class="section">
+            <h2>About</h2>
+            <p style="color:#a0a0b8;font-size:0.9rem;">
+                I build AI-powered products by directing multi-agent systems.
+                I focus on the <strong>what</strong> and <strong>why</strong> —
+                the AI handles the <strong>how</strong>.
+            </p>
+        </div>
+
+        <!-- Projects -->
+        <div class="section">
+            <h2>Projects</h2>
+
+            <div class="project">
+                <h3>AI-Video-Summarizer <span class="status status-done">Complete</span></h3>
+                <div class="desc">YouTube transcript extraction and AI summarization tool. Multi-agent pipeline: extractor → summarizer → formatter. Built with Streamlit, Gemini API, FastAPI.</div>
+                <div class="tech">Python • Streamlit • Gemini API • FastAPI</div>
+                <a href="https://github.com/Vishalk50/-AI-Video-Summarizer-">View on GitHub →</a>
+            </div>
+
+            <div class="project">
+                <h3>Voice-Trade-Recorder <span class="status status-wip">In Progress</span></h3>
+                <div class="desc">Voice-to-text recorder for Indian mandi Arhatias. 5-agent pipeline: recorder → transcriber → extractor → trainer → output.</div>
+                <div class="tech">Python • Whisper • Gemini API • Multi-Agent</div>
+            </div>
+
+            <div class="project">
+                <h3>QuarterlyClock <span class="status status-done">Complete</span></h3>
+                <div class="desc">Desktop widget tracking global trading sessions (ASI, LDN, NYC) with ICT Killzone overlays. Standalone .exe.</div>
+                <div class="tech">Python • Tkinter • PyInstaller</div>
+            </div>
+
+            <div class="project">
+                <h3>6h 40m Candles — TradingView Indicator <span class="status status-done">Complete</span></h3>
+                <div class="desc">Custom timeframe indicator for TradingView. Reconstructs 6h 40m candles from lower timeframe data.</div>
+                <div class="tech">Pine Script v6</div>
+            </div>
+
+            <div class="project">
+                <h3>Jarvis AI Assistant <span class="status status-wip">Working</span></h3>
+                <div class="desc">Voice-controlled AI assistant with DeepSeek API. Voice input, TTS, web search, file management.</div>
+                <div class="tech">Python • DeepSeek API • Speech-to-Text</div>
+            </div>
+
+            <div class="project">
+                <h3>Telegram Alert System <span class="status status-wip">In Progress</span></h3>
+                <div class="desc">Monitors Telegram groups for keyword-based alerts. Phase 2 pending: commands, email, daily summary.</div>
+                <div class="tech">Python • Telethon</div>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="section">
+            <h2>Skills</h2>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                <span style="background:#1e1e2e;padding:4px 14px;border-radius:16px;font-size:0.82rem;color:#a0a0b8;">AI Product Development</span>
+                <span style="background:#1e1e2e;padding:4px 14px;border-radius:16px;font-size:0.82rem;color:#a0a0b8;">Multi-Agent Systems</span>
+                <span style="background:#1e1e2e;padding:4px 14px;border-radius:16px;font-size:0.82rem;color:#a0a0b8;">Python</span>
+                <span style="background:#1e1e2e;padding:4px 14px;border-radius:16px;font-size:0.82rem;color:#a0a0b8;">Gemini API</span>
+                <span style="background:#1e1e2e;padding:4px 14px;border-radius:16px;font-size:0.82rem;color:#a0a0b8;">Streamlit</span>
+                <span style="background:#1e1e2e;padding:4px 14px;border-radius:16px;font-size:0.82rem;color:#a0a0b8;">Voice AI</span>
+                <span style="background:#1e1e2e;padding:4px 14px;border-radius:16px;font-size:0.82rem;color:#a0a0b8;">Prompt Engineering</span>
+                <span style="background:#1e1e2e;padding:4px 14px;border-radius:16px;font-size:0.82rem;color:#a0a0b8;">Web Scraping</span>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            Vishal Khajuriya &copy; 2026
+        </div>
+    </div>
+</body>
+</html>
