@@ -42,6 +42,8 @@ portfolio/
 - Individual project pages for detailed showcase
 
 ## Current Status
-- Framework docs complete (6 documents)
-- Ready to implement per 06_IMPLEMENTATION_PLAN.md
-- Old index.html still present until rebuild completes
+- ✅ Full rebuild complete (Astro 6.x + TypeScript)
+- ✅ 10 pages built: Home, Projects grid, 5 project detail pages, Services, Contact, 404
+- ✅ GitHub Pages auto-deploy via Actions on push to main
+- ✅ Live at: https://Vishalk50.github.io/Portfolio (GitHub Pages)
+- Old index.html preserved at root (not served — dist/ is deployed via Actions)

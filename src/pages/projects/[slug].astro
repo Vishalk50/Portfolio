@@ -18,7 +18,7 @@ const nextProject = currentIndex < projects.length - 1 ? projects[currentIndex +
 
 <BaseLayout title={project.title}>
   <div class="project-detail-header">
-    <a href="/portfolio/projects/" class="back-link">← All Projects</a>
+    <a href="/Portfolio/projects/" class="back-link">← All Projects</a>
     <h1>{project.title}</h1>
     <div class="tags">
       <span class={`status-badge status-${project.status === 'complete' ? 'complete' : 'in-progress'}`}>
@@ -40,17 +40,17 @@ const nextProject = currentIndex < projects.length - 1 ? projects[currentIndex +
       {project.githubUrl && (
         <a href={project.githubUrl} target="_blank" rel="noopener" class="btn btn-outline">View on GitHub →</a>
       )}
-      <a href="/portfolio/contact/" class="btn btn-primary">Build something like this</a>
+      <a href="/Portfolio/contact/" class="btn btn-primary">Build something like this</a>
     </div>
 
     <div style="display:flex;justify-content:space-between;margin-top:48px;padding-top:24px;border-top:1px solid var(--border);">
       {prevProject ? (
-        <a href={`/portfolio/projects/${prevProject.slug}/`} style="color:var(--text-secondary);text-decoration:none;font-size:0.88rem;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-secondary)'">
+        <a href={`/Portfolio/projects/${prevProject.slug}/`} style="color:var(--text-secondary);text-decoration:none;font-size:0.88rem;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-secondary)'">
           ← {prevProject.title}
         </a>
       ) : <span />}
       {nextProject ? (
-        <a href={`/portfolio/projects/${nextProject.slug}/`} style="color:var(--text-secondary);text-decoration:none;font-size:0.88rem;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-secondary)'">
+        <a href={`/Portfolio/projects/${nextProject.slug}/`} style="color:var(--text-secondary);text-decoration:none;font-size:0.88rem;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-secondary)'">
           {nextProject.title} →
         </a>
       ) : <span />}

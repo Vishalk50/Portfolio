@@ -10,8 +10,8 @@ const featured = projects.filter(p => p.featured);
     <div class="tagline">AI Product Builder</div>
     <div class="sub">I design AI products. AI builds them.</div>
     <div class="hero-cta">
-      <a href="/portfolio/projects/" class="btn btn-primary">View Projects</a>
-      <a href="/portfolio/contact/" class="btn btn-outline">Contact Me</a>
+      <a href="/Portfolio/projects/" class="btn btn-primary">View Projects</a>
+      <a href="/Portfolio/contact/" class="btn btn-outline">Contact Me</a>
     </div>
   </section>
 
@@ -29,7 +29,7 @@ const featured = projects.filter(p => p.featured);
     <h2 class="section-title">Featured Projects</h2>
     <div class="project-grid">
       {featured.map(p => (
-        <a href={`/portfolio/projects/${p.slug}/`} class="project-card">
+        <a href={`/Portfolio/projects/${p.slug}/`} class="project-card">
           <h3>
             {p.title}
             <span class={`status-badge status-${p.status === 'complete' ? 'complete' : 'in-progress'}`}>
@@ -67,6 +67,6 @@ const featured = projects.filter(p => p.featured);
   <section class="cta-section fade-in">
     <h2>Ready to build something?</h2>
     <p>Let's turn your idea into working software.</p>
-    <a href="/portfolio/contact/" class="btn btn-primary">Get in Touch</a>
+    <a href="/Portfolio/contact/" class="btn btn-primary">Get in Touch</a>
   </section>
 </BaseLayout>

@@ -14,7 +14,7 @@ export const services: Service[] = [
     description: 'I design and build AI-powered products from idea to working prototype. You describe the vision — I architect the solution and direct AI agents to build it.',
     icon: 'bot',
     ctaText: 'Start a project',
-    ctaLink: '/portfolio/contact/',
+    ctaLink: '/Portfolio/contact/',
   },
   {
     id: 'chatbot-building',
@@ -22,7 +22,7 @@ export const services: Service[] = [
     description: 'Document-grounded chatbots that answer questions from your PDFs, manuals, or knowledge bases. Powered by vector search + LLM for accurate, context-aware responses.',
     icon: 'message-square',
     ctaText: 'Build a chatbot',
-    ctaLink: '/portfolio/contact/',
+    ctaLink: '/Portfolio/contact/',
   },
   {
     id: 'web-automation',
@@ -30,7 +30,7 @@ export const services: Service[] = [
     description: 'Custom data extraction pipelines and automation scripts. Turn unstructured web data into structured, actionable information.',
     icon: 'search',
     ctaText: 'Talk about automation',
-    ctaLink: '/portfolio/contact/',
+    ctaLink: '/Portfolio/contact/',
   },
   {
     id: 'voice-ai',
@@ -38,6 +38,6 @@ export const services: Service[] = [
     description: 'Speech-to-text, voice-controlled assistants, and voice-enabled data entry systems. Built with Whisper, RAG pipelines, and LLM integration.',
     icon: 'mic',
     ctaText: 'Discuss voice AI',
-    ctaLink: '/portfolio/contact/',
+    ctaLink: '/Portfolio/contact/',
   },
 ];
