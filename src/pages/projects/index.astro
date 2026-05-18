@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { projects } from '../../data/projects';
+---
+
+<BaseLayout title="Projects">
+  <section class="section">
+    <h2 class="section-title">All Projects</h2>
+    <div class="project-grid">
+      {projects.map(p => (
+        <a href={`/portfolio/projects/${p.slug}/`} class="project-card fade-in">
+          <h3>
+            {p.title}
+            <span class={`status-badge status-${p.status === 'complete' ? 'complete' : 'in-progress'}`}>
+              {p.status === 'complete' ? 'Complete' : 'In Progress'}
+            </span>
+          </h3>
+          <div class="desc">{p.shortDescription}</div>
+          <div class="tech">{p.tech.join(' • ')}</div>
+          <span class="card-link">View details →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

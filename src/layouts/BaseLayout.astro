@@ -1,0 +1,90 @@
+---
+import '../styles/global.css';
+const { title } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title ? `${title} — Vishal Khajuriya` : 'Vishal Khajuriya — AI Product Builder'}</title>
+  <link rel="icon" type="image/svg+xml" href="/portfolio/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <meta name="description" content="Vishal Khajuriya — AI Product Builder. I design AI-powered products by directing multi-agent systems." />
+  <meta property="og:title" content="Vishal Khajuriya — AI Product Builder" />
+  <meta property="og:description" content="I design AI products. AI builds them." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://Vishalk50.github.io/portfolio" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/portfolio/" class="logo">VK</a>
+      <ul class="nav-links">
+        <li><a href="/portfolio/" class={currentPath === '/portfolio/' || currentPath === '/portfolio' ? 'active' : ''}>Home</a></li>
+        <li><a href="/portfolio/projects/" class={currentPath.startsWith('/portfolio/projects') ? 'active' : ''}>Projects</a></li>
+        <li><a href="/portfolio/services/" class={currentPath.startsWith('/portfolio/services') ? 'active' : ''}>Services</a></li>
+        <li><a href="/portfolio/contact/" class={currentPath.startsWith('/portfolio/contact') ? 'active' : ''}>Contact</a></li>
+        <li><a href="/portfolio/resume.pdf" class="nav-resume" download>Resume</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <div class="mobile-overlay" id="overlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/portfolio/">Home</a>
+    <a href="/portfolio/projects/">Projects</a>
+    <a href="/portfolio/services/">Services</a>
+    <a href="/portfolio/contact/">Contact</a>
+    <a href="/portfolio/resume.pdf" class="nav-resume" download>Resume</a>
+  </div>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://github.com/Vishalk50" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/vishal-kkhajuriya-a182b91b5/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:vishalkhajuriya443@gmail.com">Email</a>
+    </div>
+    <div class="copyright">Vishal Khajuriya &copy; 2026</div>
+  </footer>
+
+  <script>
+    (function() {
+      const hamburger = document.getElementById('hamburger');
+      const overlay = document.getElementById('overlay');
+      const menu = document.getElementById('mobileMenu');
+      if (!hamburger || !overlay || !menu) return;
+
+      function open() { menu.classList.add('open'); overlay.classList.add('open'); }
+      function close() { menu.classList.remove('open'); overlay.classList.remove('open'); }
+
+      hamburger.addEventListener('click', open);
+      overlay.addEventListener('click', close);
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+
+      // Scroll animations
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    })();
+  </script>
+</body>
+</html>

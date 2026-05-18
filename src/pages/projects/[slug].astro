@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { projects } from '../../data/projects';
+
+export function getStaticPaths() {
+  return projects.map(p => ({
+    params: { slug: p.slug },
+    props: { project: p },
+  }));
+}
+
+const { project } = Astro.props;
+const allSlugs = projects.map(p => p.slug);
+const currentIndex = allSlugs.indexOf(project.slug);
+const prevProject = currentIndex > 0 ? projects[currentIndex - 1] : null;
+const nextProject = currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null;
+---
+
+<BaseLayout title={project.title}>
+  <div class="project-detail-header">
+    <a href="/portfolio/projects/" class="back-link">← All Projects</a>
+    <h1>{project.title}</h1>
+    <div class="tags">
+      <span class={`status-badge status-${project.status === 'complete' ? 'complete' : 'in-progress'}`}>
+        {project.status === 'complete' ? 'Complete' : 'In Progress'}
+      </span>
+      {project.tech.map(t => <span class="skill-tag">{t}</span>)}
+    </div>
+  </div>
+
+  <div class="project-detail-body">
+    <p>{project.description}</p>
+
+    <h2>Features</h2>
+    <ul>
+      {project.details.map(d => <li>{d}</li>)}
+    </ul>
+
+    <div class="project-links">
+      {project.githubUrl && (
+        <a href={project.githubUrl} target="_blank" rel="noopener" class="btn btn-outline">View on GitHub →</a>
+      )}
+      <a href="/portfolio/contact/" class="btn btn-primary">Build something like this</a>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;margin-top:48px;padding-top:24px;border-top:1px solid var(--border);">
+      {prevProject ? (
+        <a href={`/portfolio/projects/${prevProject.slug}/`} style="color:var(--text-secondary);text-decoration:none;font-size:0.88rem;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-secondary)'">
+          ← {prevProject.title}
+        </a>
+      ) : <span />}
+      {nextProject ? (
+        <a href={`/portfolio/projects/${nextProject.slug}/`} style="color:var(--text-secondary);text-decoration:none;font-size:0.88rem;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-secondary)'">
+          {nextProject.title} →
+        </a>
+      ) : <span />}
+    </div>
+  </div>
+</BaseLayout>
