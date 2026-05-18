@@ -29,7 +29,7 @@ const currentPath = Astro.url.pathname;
         <li><a href="/Portfolio/projects/" class={currentPath.startsWith('/Portfolio/projects') ? 'active' : ''}>Projects</a></li>
         <li><a href="/Portfolio/services/" class={currentPath.startsWith('/Portfolio/services') ? 'active' : ''}>Services</a></li>
         <li><a href="/Portfolio/contact/" class={currentPath.startsWith('/Portfolio/contact') ? 'active' : ''}>Contact</a></li>
-        <li><a href="/Portfolio/resume.pdf" class="nav-resume" download>Resume</a></li>
+        <li><a href="/Portfolio/contact/" class="nav-resume">Hire Me</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -43,7 +43,7 @@ const currentPath = Astro.url.pathname;
     <a href="/Portfolio/projects/">Projects</a>
     <a href="/Portfolio/services/">Services</a>
     <a href="/Portfolio/contact/">Contact</a>
-    <a href="/Portfolio/resume.pdf" class="nav-resume" download>Resume</a>
+    <a href="/Portfolio/contact/" class="nav-resume">Hire Me</a>
   </div>
 
   <main>

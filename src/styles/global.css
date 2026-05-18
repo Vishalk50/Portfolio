@@ -76,7 +76,7 @@ nav {
   color: var(--accent);
 }
 
-.nav-resume {
+.nav-cta {
   font-size: 0.82rem;
   padding: 6px 16px;
   border: 1px solid var(--accent);
@@ -85,7 +85,7 @@ nav {
   transition: background 0.2s, color 0.2s;
 }
 
-.nav-resume:hover {
+.nav-cta:hover {
   background: var(--accent);
   color: #fff !important;
 }
