@@ -51,7 +51,7 @@ export const projects: Project[] = [
     ],
     status: 'complete',
     tech: ['Python', 'Flask', 'FAISS', 'Gemini API', 'Sentence Transformers', 'Ollama'],
-    githubUrl: 'https://github.com/Vishalk50',
+    githubUrl: 'https://github.com/Vishalk50/ChatBot-Studio',
     featured: true,
   },
   {
